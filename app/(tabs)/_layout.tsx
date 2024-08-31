@@ -9,6 +9,7 @@ export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
+    
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
@@ -24,14 +25,32 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="cart"
         options={{
-          title: 'Explore',
+          title: 'Cart',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabBarIcon name={focused ? 'cart-outline' : 'cart-outline'} color={color} />
           ),
         }}
       />
-    </Tabs>
+     <Tabs.Screen
+     name="menu"
+     options={{
+       title: 'Menu',
+       tabBarIcon: ({ color, focused }) => (
+         <TabBarIcon name={focused ? 'menu-outline' : 'menu-outline'} color={color} />
+       ),
+     }}
+   />
+     <Tabs.Screen
+     name="account"
+     options={{
+       title: 'Account',
+       tabBarIcon: ({ color, focused }) => (
+         <TabBarIcon name={focused ? 'person-outline' : 'person-outline'} color={color} />
+       ),
+     }}
+   />
+ </Tabs>
   );
 }
